@@ -1,11 +1,11 @@
 export const metadata = {
-  title: 'Home - Open PRO',
-  description: 'Page description',
+  title: 'Home - Nexuco',
+  description: 'descripción',
 }
 
 import Hero from '@/components/hero'
 import Features from '@/components/features'
-import Newsletter from '@/components/newsletter'
+// import Newsletter from '@/components/newsletter'
 import Zigzag from '@/components/zigzag'
 import Testimonials from '@/components/testimonials'
 
@@ -15,8 +15,8 @@ export default function Home() {
       <Hero />
       <Features />
       <Zigzag />
-      <Testimonials />
-      <Newsletter />
+      {/* <Testimonials /> */}
+{/*       <Newsletter /> */}
     </>
   )
 }

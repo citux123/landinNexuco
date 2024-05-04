@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Reset Password - Open PRO',
+  title: 'Reset Password - Nexuco',
   description: 'Page description',
 }
 
@@ -13,8 +13,8 @@ export default function ResetPassword() {
 
           {/* Page header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-            <h1 className="h1 mb-4">Forgot your password?</h1>
-            <p className="text-xl text-gray-400">We'll email you instructions on how to reset it.</p>
+            <h1 className="h1 mb-4">Olvidaste tu contraseña?</h1>
+            <p className="text-xl text-gray-400">Te enviaremos un correo con instrucciones para recuperarla.</p>
           </div>
 
           {/* Form */}
@@ -28,7 +28,7 @@ export default function ResetPassword() {
               </div>
               <div className="flex flex-wrap -mx-3 mt-6">
                 <div className="w-full px-3">
-                  <button className="btn text-white bg-purple-600 hover:bg-purple-700 w-full">Reset Password</button>
+                  <button className="btn text-white bg-purple-600 hover:bg-purple-700 w-full">Enviar correo</button>
                 </div>
               </div>
             </form>

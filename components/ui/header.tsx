@@ -1,9 +1,33 @@
+"use client"
+
 import Link from 'next/link'
 import MobileMenu from './mobile-menu'
 import Logo from '@/public/images/logo.png'
 import Image from 'next/image'
+import ContactForm from "@/components/contacto"
+import { Modal } from "@rewind-ui/core"
+import { useState } from 'react'
+import { Button } from '@rewind-ui/core';
+
+const customStyles = {
+  overlay: {
+    backgroundColor: 'rgba(0, 0, 0, 0.5)'
+  },
+  content: {
+    backgroundColor: '#333',
+    color: '#fff',
+    border: 'none',
+    borderRadius: '8px',
+    maxWidth: '400px',
+    margin: 'auto',
+    padding: '20px'
+  }
+};
 
 export default function Header() {
+  const [open, setOpen] = useState(false);
+
+
   return (
     <header className="absolute w-full z-30">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -21,6 +45,13 @@ export default function Header() {
 
           {/* Desktop navigation */}
           <nav className="hidden md:flex md:grow">
+            <div className="flex grow justify-end flex-wrap items-center">
+            <Button shadow='base' animation='pulse' onClick={() => setOpen(true)}>Contactanos!</Button>
+
+            </div>
+          <Modal size="md" open={open} onClose={() => setOpen(false)}>
+            <ContactForm />
+          </Modal>
             {/* Desktop sign in links */}
            {/*  <ul className="flex grow justify-end flex-wrap items-center">
               <li>

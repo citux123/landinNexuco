@@ -50,7 +50,7 @@ export default function Header() {
 
             </div>
           <Modal size="md" open={open} onClose={() => setOpen(false)}>
-            <ContactForm />
+            <ContactForm setOpen={setOpen}/>
           </Modal>
             {/* Desktop sign in links */}
            {/*  <ul className="flex grow justify-end flex-wrap items-center">

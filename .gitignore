@@ -44,9 +44,12 @@ node_modules
 bower_components
 .next
 yarn.lock
-
+out
 *.sublime*
 
 psd
 thumb
 sketch
+/out
+*_next
+out

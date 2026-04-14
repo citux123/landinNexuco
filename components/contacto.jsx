@@ -44,7 +44,9 @@ function ContactForm({setOpen}) {
     formData.fecha_ingreso = new Date()
     e.preventDefault();
     setLoading(true)
-    axios.post('https://back-nexuco.onrender.com/setContacto', {
+    axios.post('https://api.nexuco.com/setContacto', {
+    //axios.post('http://localhost:3011/setContacto', {
+
      ...formData
     })
     .then(function (response) {

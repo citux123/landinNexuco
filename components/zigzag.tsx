@@ -4,133 +4,91 @@ import FeatImage01 from '@/public/images/features-03-image-01.png'
 import FeatImage02 from '@/public/images/features-03-image-02.png'
 import FeatImage03 from '@/public/images/features-03-image-03.png'
 
+const journey = [
+  {
+    eyebrow: 'Paso 1',
+    title: 'Mapeamos la operacion antes de hablar de pantallas.',
+    copy: 'Identificamos donde se rompe el flujo entre compras, inventario, ventas, produccion o finanzas para priorizar el alcance correcto.',
+    bullets: ['Procesos criticos primero', 'Responsables claros por etapa', 'Objetivos medibles desde el arranque'],
+    image: FeatImage01,
+    alt: 'Mapeo de procesos operativos',
+  },
+  {
+    eyebrow: 'Paso 2',
+    title: 'Configuramos el sistema alrededor de tus reglas de negocio.',
+    copy: 'La implementacion gana valor cuando el sistema refleja tu forma de operar y no obliga a trabajar con atajos o dobles registros.',
+    bullets: ['Catalogos y flujos alineados', 'Integracion entre areas', 'Menos friccion en la captura diaria'],
+    image: FeatImage02,
+    alt: 'Configuracion de ERP',
+  },
+  {
+    eyebrow: 'Paso 3',
+    title: 'Convertimos datos operativos en seguimiento ejecutivo.',
+    copy: 'Reportes y tableros dejan de ser un cierre tardio y se vuelven una herramienta diaria para reaccionar a tiempo.',
+    bullets: ['KPIs utiles para direccion', 'Visibilidad sobre cuellos de botella', 'Decisiones con informacion consistente'],
+    image: FeatImage03,
+    alt: 'Analitica y seguimiento de indicadores',
+  },
+]
+
 export default function Zigzag() {
   return (
     <section>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="py-12 md:py-20 border-t border-gray-800">
-
-          {/* Section header */}
-          <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <div className="inline-flex text-sm font-semibold py-1 px-3 m-2 text-green-600 bg-green-200 rounded-full mb-4">¡Únete a nosotros y descubre cómo podemos transformar tu visión en realidad!</div>
-            <h1 className="h2 mb-4">Un producto, Soluciones ilimitadas!</h1>
-            <p className="text-xl text-gray-400">Nuestra experiencia y conocimiento en el desarrollo de software nos permiten ofrecer soluciones completas y escalables que se integran perfectamente con tu infraestructura existente. Nos enorgullece proporcionar un servicio de alta calidad, desde la concepción de la idea hasta la implementación y el soporte continuo.</p>
-            <p className="text-xl text-gray-400">En NEXUCO, estamos comprometidos en convertirnos en tu socio tecnológico de confianza, brindándote las herramientas y el apoyo necesarios para impulsar el éxito y el crecimiento sostenible de tu negocio.</p>
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="border-t border-white/10 py-16 md:py-24">
+          <div className="mx-auto max-w-3xl text-center">
+            <span className="inline-flex rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-sm font-semibold text-emerald-200">
+              Implementacion enfocada en resultados
+            </span>
+            <h2 className="mt-6 text-4xl font-bold tracking-tight text-white md:text-5xl">
+              Un ERP bien implementado cambia la forma en que opera toda la empresa.
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-slate-300">
+              El valor no esta en tener mas modulos, sino en reducir la friccion entre equipos y volver confiable la informacion que usa direccion para decidir.
+            </p>
           </div>
 
-          {/* Items */}
-          <div className="grid gap-20">
+          <div className="mt-16 grid gap-16">
+            {journey.map((item, index) => (
+              <div key={item.title} className="grid items-center gap-8 md:grid-cols-12 md:gap-10">
+                <div
+                  className={`max-w-xl md:col-span-5 lg:col-span-6 ${index % 2 === 1 ? 'md:order-2' : ''}`}
+                  data-aos="fade-up"
+                >
+                  <div className="interactive-card rounded-[2rem] border border-white/10 bg-white/[0.04] p-3 shadow-[0_25px_60px_rgba(2,12,27,0.35)]">
+                    <Image
+                      className="h-auto w-full rounded-[1.4rem]"
+                      src={item.image}
+                      width={540}
+                      height={405}
+                      alt={item.alt}
+                    />
+                  </div>
+                </div>
 
-            {/* 1st item */}
-            <div className="md:grid md:grid-cols-12 md:gap-6 items-center">
-              {/* Image */}
-              <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 md:order-1" data-aos="fade-up">
-                <Image className="max-w-full mx-auto md:max-w-none h-auto" src={FeatImage01} width={540} height={405} alt="Features 01" />
-              </div>
-              {/* Content */}
-              <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6" data-aos="fade-right">
-                <div className="md:pr-4 lg:pr-12 xl:pr-16">
-                  <div className="font-architects-daughter text-xl text-purple-600 mb-2">Acelera procesos, reduce gastos</div>
-                  <h3 className="h3 mb-3">Centralización de Datos</h3>
-                  <p className="text-xl text-gray-400 mb-4">En resumen, tener un ERP puede acelerar los procesos empresariales, reducir los gastos operativos y mejorar la eficiencia en general, lo que lleva a un mejor rendimiento financiero y una ventaja competitiva en el mercado.</p>
-                  <ul className="text-lg text-gray-400 -mb-2">
-                    <li className="flex items-center mb-2">
-                      <svg className="w-3 h-3 fill-current text-green-500 mr-2 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
-                      </svg>
-                      <span>Mejora en la Toma de Decisiones</span>
-                    </li>
-                    <li className="flex items-center mb-2">
-                      <svg className="w-3 h-3 fill-current text-green-500 mr-2 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
-                      </svg>
-                      <span>Optimización de Inventarios y Suministros</span>
-                    </li>
-                    <li className="flex items-center">
-                      <svg className="w-3 h-3 fill-current text-green-500 mr-2 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
-                      </svg>
-                      <span>Eficiencia Operativa</span>
-                    </li>
-                  </ul>
+                <div
+                  className={`max-w-xl md:col-span-7 lg:col-span-6 ${index % 2 === 1 ? 'md:order-1' : ''}`}
+                  data-aos={index % 2 === 1 ? 'fade-right' : 'fade-left'}
+                >
+                  <div className={index % 2 === 1 ? 'md:pr-8' : 'md:pl-8'}>
+                    <p className="font-architects-daughter text-2xl text-cyan-300">{item.eyebrow}</p>
+                    <h3 className="mt-3 text-3xl font-semibold text-white md:text-4xl">{item.title}</h3>
+                    <p className="mt-4 text-lg leading-8 text-slate-300">{item.copy}</p>
+                    <ul className="mt-6 space-y-3 text-base text-slate-200">
+                      {item.bullets.map((bullet) => (
+                        <li key={bullet} className="flex items-start gap-3">
+                          <svg className="mt-1 h-5 w-5 shrink-0 fill-current text-emerald-300" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
+                          </svg>
+                          <span>{bullet}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            {/* 2nd item */}
-            <div className="md:grid md:grid-cols-12 md:gap-6 items-center">
-              {/* Image */}
-              <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 rtl" data-aos="fade-up">
-                <Image className="max-w-full mx-auto md:max-w-none h-auto" src={FeatImage02} width={540} height={405} alt="Features 02" />
-              </div>
-              {/* Content */}
-              <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6" data-aos="fade-left">
-                <div className="md:pl-4 lg:pl-12 xl:pl-16">
-                  <div className="font-architects-daughter text-xl text-purple-600 mb-2">Mejora Continua</div>
-                  <h3 className="h3 mb-3">Manten los procesos en orden</h3>
-                  <p className="text-xl text-gray-400 mb-4">Al proporcionar una visión completa de todos los aspectos del negocio, desde la producción hasta las ventas y finanzas, un ERP ayuda a identificar áreas de mejora y optimización en los procesos operativos, lo que conduce a una mayor eficiencia y reducción de costos.</p>
-                  <ul className="text-lg text-gray-400 -mb-2">
-                    <li className="flex items-center mb-2">
-                      <svg className="w-3 h-3 fill-current text-green-500 mr-2 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
-                      </svg>
-                      <span>Escalabilidad y Flexibilidad</span>
-                    </li>
-                    <li className="flex items-center mb-2">
-                      <svg className="w-3 h-3 fill-current text-green-500 mr-2 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
-                      </svg>
-                      <span>Reducción de Errores</span>
-                    </li>
-                    <li className="flex items-center">
-                      <svg className="w-3 h-3 fill-current text-green-500 mr-2 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
-                      </svg>
-                      <span>Información en el momento oportuno</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* 3rd item */}
-            <div className="md:grid md:grid-cols-12 md:gap-6 items-center">
-              {/* Image */}
-              <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 md:order-1" data-aos="fade-up">
-                <Image className="max-w-full mx-auto md:max-w-none h-auto" src={FeatImage03} width={540} height={405} alt="Features 03" />
-              </div>
-              {/* Content */}
-              <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6" data-aos="fade-right">
-                <div className="md:pr-4 lg:pr-12 xl:pr-16">
-                  <div className="font-architects-daughter text-xl text-purple-600 mb-2">Un cliente feliz.</div>
-                  <h3 className="h3 mb-3">Mejora en la Experiencia del Cliente</h3>
-                  <p className="text-xl text-gray-400 mb-4">Proporcionar una visión completa del ciclo de vida del cliente. Esto permite a la empresa ofrecer un servicio más personalizado, anticipar las necesidades de los clientes y mejorar la satisfacción del cliente en general.</p>
-                  <ul className="text-lg text-gray-400 -mb-2">
-                    <li className="flex items-center mb-2">
-                      <svg className="w-3 h-3 fill-current text-green-500 mr-2 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
-                      </svg>
-                      <span>Pedidos de acuerdo al inventario</span>
-                    </li>
-                    <li className="flex items-center mb-2">
-                      <svg className="w-3 h-3 fill-current text-green-500 mr-2 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
-                      </svg>
-                      <span>Información completa de producción</span>
-                    </li>
-                    <li className="flex items-center">
-                      <svg className="w-3 h-3 fill-current text-green-500 mr-2 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
-                      </svg>
-                      <span>Facilita la Toma de Decisiones Estratégicas</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
+            ))}
           </div>
-
         </div>
       </div>
     </section>

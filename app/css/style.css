@@ -14,6 +14,110 @@
     .rtl {
         direction: rtl;
     }
+
+    @keyframes heroReveal {
+        0% {
+            opacity: 0;
+            transform: translate3d(0, 24px, 0) scale(0.98);
+        }
+        100% {
+            opacity: 1;
+            transform: translate3d(0, 0, 0) scale(1);
+        }
+    }
+
+    @keyframes floatDrift {
+        0%, 100% {
+            transform: translate3d(0, 0, 0);
+        }
+        50% {
+            transform: translate3d(0, -14px, 0);
+        }
+    }
+
+    @keyframes pulseGlow {
+        0%, 100% {
+            opacity: 0.45;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.8;
+            transform: scale(1.08);
+        }
+    }
+
+    .hero-reveal {
+        opacity: 0;
+        animation: heroReveal 720ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .hero-orb {
+        animation: floatDrift 10s ease-in-out infinite;
+    }
+
+    .hero-orb-delayed {
+        animation-delay: -3s;
+    }
+
+    .glow-pulse {
+        animation: pulseGlow 6s ease-in-out infinite;
+    }
+
+    .interactive-card {
+        position: relative;
+        overflow: hidden;
+        transition: transform 280ms ease, border-color 280ms ease, background-color 280ms ease, box-shadow 280ms ease;
+    }
+
+    .interactive-card::before {
+        content: "";
+        position: absolute;
+        inset: -30%;
+        background: radial-gradient(circle, rgba(34, 211, 238, 0.2) 0%, rgba(34, 211, 238, 0) 62%);
+        opacity: 0;
+        transform: scale(0.7);
+        transition: opacity 280ms ease, transform 280ms ease;
+        pointer-events: none;
+    }
+
+    .interactive-card:hover,
+    .interactive-card:focus-within {
+        transform: translateY(-6px);
+        border-color: rgba(103, 232, 249, 0.35);
+        background-color: rgba(255, 255, 255, 0.08);
+        box-shadow: 0 24px 60px rgba(8, 15, 35, 0.28);
+    }
+
+    .interactive-card:hover::before,
+    .interactive-card:focus-within::before {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .cta-arrow {
+        transition: transform 220ms ease;
+    }
+
+    .cta-link:hover .cta-arrow,
+    .cta-link:focus-visible .cta-arrow {
+        transform: translateX(4px);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .hero-reveal,
+        .hero-orb,
+        .glow-pulse {
+            animation: none;
+            opacity: 1;
+            transform: none;
+        }
+
+        .interactive-card,
+        .interactive-card::before,
+        .cta-arrow {
+            transition: none;
+        }
+    }
 }
 
 /* See Alpine.js: https://github.com/alpinejs/alpine#x-cloak */
